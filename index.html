@@ -15,6 +15,12 @@
 <body>
 <div class="container">
 
+  <!-- サイトナビゲーション -->
+  <nav class="site-nav">
+    <a href="https://gofinsim.com/" class="site-nav-logo">GoFinSim</a>
+    <a href="https://gofinsim.com/" class="site-nav-link">← 記事一覧へ戻る</a>
+  </nav>
+
   <!-- ヘッダー -->
   <header class="header">
     <div class="header-eyebrow">🔒 Tax Reserve Simulator</div>
@@ -114,7 +120,7 @@
         <span class="breakdown-value" id="bd-income-tax">—</span>
       </div>
       <div class="breakdown-row">
-        <span class="breakdown-label">住民税・森林環境税（翌年6月〜）</span>
+        <span class="breakdown-label">住民税（翌年6月〜）</span>
         <span class="breakdown-value" id="bd-resident-tax">—</span>
       </div>
       <div class="breakdown-row">
@@ -168,13 +174,12 @@
           <tbody>
             <tr><td>復興特別所得税</td><td>所得税額 × 2.1%（2037年まで）</td></tr>
             <tr><td>住民税（所得割）</td><td>副業所得 × 10%</td></tr>
-            <tr><td>森林環境税</td><td>年間 1,000円（2024年〜）</td></tr>
-            <tr><td>基礎控除</td><td>58万円（2025年分〜）</td></tr>
+            <tr><td>基礎控除</td><td>58万円（2025年分〜）<br><small style="color:#9a9a94">※2025年分は所得655万円以下で58万円より多い控除が適用されます。本ツールは積立不足を防ぐため控除額を一律58万円（最小値）で計算しており、実際の納税額より多めに見積もる設計です</small></td></tr>
             <tr><td>給与所得控除（最低）</td><td>65万円（2025年分〜）</td></tr>
             <tr><td>社会保険料控除</td><td>本業年収 × 約14.44%（概算）</td></tr>
           </tbody>
         </table>
-        <p class="tax-ref-note">※ 2025年分（令和7年分）以降の税率・控除額を使用しています</p>
+        <p class="tax-ref-note">※ 2025年分（令和7年分）の税率・控除額を使用しています</p>
       </div>
     </div>
   </div>
@@ -191,6 +196,16 @@
   </div>
 
   <div class="storage-note">💾 入力内容は自動保存されます</div>
+
+  <!-- フッターナビゲーション -->
+  <footer class="site-footer">
+    <div class="site-footer-links">
+      <a href="https://gofinsim.com/" class="footer-link">GoFinSim トップ</a>
+      <a href="https://gofinsim.com/fukugyo-zeikin-tsumitate/" class="footer-link">副業税金の解説記事</a>
+      <a href="https://gofinsim.com/privacy-policy/" class="footer-link">プライバシーポリシー</a>
+    </div>
+    <p class="site-footer-copy">© 2025 GoFinSim</p>
+  </footer>
 
 </div>
 <script src="main.js"></script>
