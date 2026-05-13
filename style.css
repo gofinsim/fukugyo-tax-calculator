@@ -179,7 +179,7 @@ h1 {
 .optional-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   cursor: pointer;
   padding: 10px 0;
   border: none;
@@ -349,7 +349,7 @@ h1 {
 
 .breakdown-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 9px 0;
   border-bottom: 1px solid var(--border);
@@ -403,7 +403,7 @@ h1 {
 
 .progress-labels {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   font-size: 11px;
   color: var(--text-muted);
   font-family: var(--mono);
@@ -451,11 +451,67 @@ h1 {
 }
 
 
+
+/* ── 記事への誘導ボタン ───────────────────────── */
+.back-to-article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.back-to-article-text {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.back-to-article-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.back-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sans);
+  text-decoration: none;
+  text-align: center;
+  transition: background var(--transition), box-shadow var(--transition);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(26,107,60,0.2);
+}
+
+.back-btn:hover {
+  background: #155a32;
+  box-shadow: 0 4px 14px rgba(26,107,60,0.3);
+}
+
+.back-btn-secondary {
+  background: var(--surface2);
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  box-shadow: none;
+}
+
+.back-btn-secondary:hover {
+  background: var(--accent-lt);
+  box-shadow: none;
+}
 /* ── サイトナビゲーション ────────────────────── */
 .site-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 12px 0 20px;
   margin-bottom: 8px;
   border-bottom: 1px solid var(--border);
@@ -472,15 +528,6 @@ h1 {
 
 .site-nav-logo:hover { opacity: 0.8; }
 
-.site-nav-link {
-  font-size: 12px;
-  color: var(--text-sub);
-  text-decoration: none;
-  font-family: var(--mono);
-  transition: color var(--transition);
-}
-
-.site-nav-link:hover { color: var(--accent); }
 
 /* ── サイトフッター ───────────────────────────── */
 .site-footer {
