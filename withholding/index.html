@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>源泉徴収税額シミュレーター｜請求書の源泉税を即時計算 - GoFinSim</title>
+  <meta name="description" content="フリーランス・副業の請求書に必要な源泉徴収税額を即時計算。100万円以下10.21%・超過分20.42%の二段階計算に対応。請求金額を入力するだけで差引振込額も瞬時に確認できます。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="favicon.png">
+  <link rel="canonical" href="https://tools.gofinsim.com/withholding/">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <a href="https://gofinsim.com/" class="header-logo" aria-label="GoFinSim 記事一覧へ">
+      <span class="logo-mark">G</span>
+      <span class="logo-text">GoFinSim</span>
+    </a>
+  </header>
+
+  <main class="main-wrap">
+
+    <!-- ツールタイトル -->
+    <section class="tool-header">
+      <h1 class="tool-title">源泉徴収税額シミュレーター</h1>
+      <p class="tool-subtitle">請求金額を入力するだけで源泉徴収税額と差引振込額を即時計算します</p>
+      <p class="disclaimer-inline">本ツールの計算結果は参考値です。正確な金額は税理士または税務署にご確認ください。</p>
+    </section>
+
+    <!-- 入力エリア -->
+    <section class="card" id="input-section">
+
+      <!-- 請求金額入力 -->
+      <div class="field-group">
+        <label class="field-label" for="invoice-amount">請求金額</label>
+        <p class="input-note">※ 消費税を別途記載している場合は税抜金額を入力してください</p>
+        <div class="input-wrap">
+          <input
+            type="text"
+            id="invoice-amount"
+            inputmode="numeric"
+            placeholder="例：300,000"
+            autocomplete="off"
+            maxlength="13"
+          >
+          <span class="input-unit">円</span>
+        </div>
+        <p class="error-message" id="error-message" role="alert" aria-live="polite"></p>
+      </div>
+
+      <button type="button" class="calc-btn" id="calc-btn">計算する</button>
+
+    </section>
+
+    <!-- 結果エリア -->
+    <section class="card result-card" id="result-section" aria-live="polite">
+      <p class="result-label">源泉徴収税額</p>
+      <p class="result-value withholding" id="result-withholding">—</p>
+
+      <div class="result-divider"></div>
+
+      <p class="result-label">差引振込額</p>
+      <p class="result-value net-amount" id="result-net-amount">—</p>
+
+      <p class="result-rate" id="result-tax-rate"></p>
+      <p class="result-breakdown" id="result-breakdown"></p>
+
+      <button type="button" class="recalc-btn" id="recalc-btn">もう一度計算する</button>
+    </section>
+
+    <!-- 注記エリア -->
+    <section class="notes-area">
+      <ul class="notes-list">
+        <li>本ツールはフリーランス・個人への報酬を対象としています。支払先が法人の場合、源泉徴収は不要です。</li>
+        <li>源泉徴収を差し引く義務は支払者（クライアント）側にあります。</li>
+      </ul>
+    </section>
+
+    <!-- 税率確認パネル -->
+    <section class="accordion-wrap">
+      <details id="rate-panel">
+        <summary class="accordion-title">源泉徴収の税率について</summary>
+        <div class="accordion-body">
+          <table class="rate-table">
+            <thead>
+              <tr>
+                <th>請求金額（税抜）の区分</th>
+                <th>税率</th>
+                <th>内訳</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100万円以下の部分</td>
+                <td class="rate-value">10.21%</td>
+                <td>所得税10% ＋ 復興特別所得税0.21%</td>
+              </tr>
+              <tr>
+                <td>100万円を超える部分</td>
+                <td class="rate-value">20.42%</td>
+                <td>所得税20% ＋ 復興特別所得税0.42%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="accordion-note">復興特別所得税は2037年（令和19年）分まで適用されます。</p>
+          <p class="accordion-note">
+            <a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2795.htm" target="_blank" rel="noopener">
+              国税庁タックスアンサー No.2795（外部リンク）
+            </a>
+          </p>
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="https://gofinsim.com/">記事一覧トップ</a>
+      <a href="https://gofinsim.com/privacy-policy/">プライバシーポリシー</a>
+      <a href="https://gofinsim.com/contact/">お問い合わせ</a>
+    </nav>
+    <p class="footer-copy">&copy; GoFinSim</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
